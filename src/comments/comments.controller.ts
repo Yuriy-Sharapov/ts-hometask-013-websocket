@@ -8,26 +8,27 @@ import { IParamId } from './interfaces/IParamId';
 export class CommentsController {
     constructor(private readonly bookService: CommentsService) {}
 
-    @Get()
-    getAll(): Promise<Comment[]> {
-        return this.bookService.getAll()
-    }
+    // // @Get()
+    // // getAll(): Promise<Comment[]> {
 
-    @Post()
-    create(@Body() body: CommentDto): Promise<Comment> {
-        return this.bookService.create(body)
-    }
+    // //     return this.bookService.getAllByBookdId()
+    // // }
 
-    @Put(':id')
-    update(
-        @Param() { id }: IParamId,
-        @Body() body: CommentDto): Promise<Comment> {
+    // @Post()
+    // create(@Body() body: CommentDto): Promise<Comment> {
+    //     return this.bookService.create(body)
+    // }
+
+    // @Put(':id')
+    // update(
+    //     @Param() { id }: IParamId,
+    //     @Body() body: CommentDto): Promise<Comment> {
         
-        return this.bookService.update(Number(id), body)
-    }
+    //     return this.bookService.update(Number(id), body)
+    // }
 
-    @Delete(':id')
-    delete(@Param() { id }: IParamId){
-        return this.bookService.delete(Number(id))
-    }    
+    // @Delete(':id')
+    // delete(@Param() { id }: IParamId){
+    //     return this.bookService.delete(Number(id))
+    // }    
 }
